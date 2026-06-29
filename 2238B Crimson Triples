@@ -1,0 +1,37 @@
+// Author is Patel Yug
+// updated on 30/01/2026
+// mara vale hathe solve karile better rehse
+ 
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <string>
+#include <cmath>
+#include <queue>
+#include <stack>
+#include <deque>
+ 
+using namespace std;
+ 
+void solve() {
+    int n;
+    cin >> n;
+ 
+    long long ans = 0;
+ 
+    for (int b = 1; b <= n; b++) {
+        long long count = n / b;
+        ans += count * count;
+    }
+ 
+    cout << ans << "\n";
+}
+ 
+int main() {
+    int t;
+    cin >> t;
+    while (t--) solve();
+    return 0;
+}
