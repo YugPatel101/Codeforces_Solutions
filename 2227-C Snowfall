@@ -1,0 +1,50 @@
+// Author is Patel Yug
+// updated on 30/01/2026
+// mara vale hathe solve karile better rehse
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <string>
+#include <cmath>
+#include <queue>
+#include <stack>
+#include <deque>
+ 
+using namespace std;
+void solve() {
+    int n; cin >> n;
+    vector<int> a(n);
+    for(auto &x : a) {
+        cin >> x;
+    }
+    vector<int> g6, g2, g3, g1;
+    for(int x : a){
+        bool d2 = x%2==0, d3 = x%3==0;
+        if(d2 && d3) {
+            g6.push_back(x);
+        }
+        else if(d2){
+            g2.push_back(x);
+        }
+        else if(d3){
+            g3.push_back(x);
+        }
+        else{
+            g1.push_back(x);
+        }
+    }
+    
+    for(int x : g6) cout << x << " ";
+    for(int x : g2) cout << x << " ";
+    for(int x : g1) cout << x << " "; 
+    for(int x : g3) cout << x << " ";
+    cout << endl;
+}
+int main() {
+    int t;
+    cin >> t;
+    while (t--) solve();
+    return 0;
+}
