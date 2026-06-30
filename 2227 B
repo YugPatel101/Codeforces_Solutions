@@ -1,0 +1,41 @@
+// Author is Patel Yug
+// updated on 30/01/2026
+// mara vale hathe solve karile better rehse
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <string>
+#include <cmath>
+#include <queue>
+#include <stack>
+#include <deque>
+ 
+using namespace std;
+ 
+void solve() {
+    int n; cin >> n;
+    string s; cin >> s;
+    
+    if (n % 2 == 1) { 
+        cout << "NO" << endl;
+        return;
+    }
+    
+    int open = 0;
+    for (int i = 0; i < n; i++) {
+        if (s[i] == '(') open++;
+    }
+    
+    if (open == n / 2) cout << "YES" << endl;
+    else cout << "NO" << endl;
+}
+ 
+ 
+int main() {
+    int t;
+    cin >> t;
+    while (t--) solve();
+    return 0;
+}
