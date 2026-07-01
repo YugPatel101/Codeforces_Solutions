@@ -1,0 +1,46 @@
+// Author is Patel Yug
+// updated on 30/01/2026
+// mara vale hathe solve karile better rehse
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <string>
+#include <cmath>
+#include <queue>
+#include <stack>
+#include <deque>
+ 
+using namespace std;
+ 
+bool check(const string& s, int start_char) {
+    int n = s.size();
+    int l = -1, r = -1;
+    for (int i = 0; i < n; i++) {
+        int expected = (start_char + i) % 2;
+        char e = (expected == 0) ? 'a' : 'b';
+        if (s[i] != e) {
+            if (l == -1) l = i;
+            r = i;
+        }
+    }
+    if (l == -1) return true;
+    for (int i = l; i < r; i++) {
+        if (s[i] == s[i+1]) return false;
+    }
+    return true;
+}
+ 
+int main(){
+    int t;
+    cin >> t;
+    while (t--) {
+        string s;
+        cin >> s;
+        if (check(s, 0) || check(s, 1))
+            cout << "YES\n";
+        else
+            cout << "NO\n";
+    }
+}
